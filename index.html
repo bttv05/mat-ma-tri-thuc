@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#087db4" />
+  <title>Mật Mã Tri Thức – Học mà như chơi</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#trang-chu">🧭 Mật Mã Tri Thức</a>
+    <nav aria-label="Điều hướng chính">
+      <a href="#trang-chu">Trang chủ</a>
+      <a href="#ca-nhan">Cá nhân</a>
+      <a href="#san-pham">Mua sản phẩm</a>
+      <a href="#chang">Các chặng</a>
+      <a href="#doi-thuong">Đổi thưởng</a>
+    </nav>
+    <button id="cart-toggle" class="cart-toggle" type="button">🛒 Giỏ hàng <span id="cart-count">0</span></button>
+  </header>
+
+  <main>
+    <section id="trang-chu" class="hero section-wrap" aria-label="Banner Mật Mã Tri Thức">
+      <img src="images/banner.png" alt="Mật Mã Tri Thức – hai bạn nhỏ khám phá kho báu" />
+      <div class="hero-actions"><a class="btn btn-gold" href="#san-pham">✨ Khám phá bộ trò chơi</a><a class="btn btn-blue" href="#chang">🗺️ Xem hành trình</a></div>
+    </section>
+
+    <section id="ca-nhan" class="section-wrap section-block">
+      <h2 class="section-title blue">👤 Thông tin cá nhân</h2>
+      <div class="profile-grid">
+        <div class="profile-card">
+          <div class="avatar">🧑‍🚀</div>
+          <div class="profile-content"><h3 id="display-name">Nhà thám hiểm nhỏ</h3><p id="display-grade">Lớp 4</p><button id="edit-profile" class="btn btn-outline" type="button">✏️ Chỉnh sửa</button></div>
+        </div>
+        <div class="stats"><div><strong id="badge-count">0</strong><span>🏅 Huy hiệu hiện có</span></div><div><strong id="completed-count">0/5</strong><span>🗺️ Chặng hoàn thành</span></div><div><strong id="orders-count">0</strong><span>📦 Đơn hàng đã ghi nhận</span></div></div>
+      </div>
+      <div class="progress-card"><div class="progress-heading"><strong>Tiến độ khám phá</strong><span id="progress-label">0%</span></div><div class="progress-track"><div id="progress-fill"></div></div><p>Mỗi chặng hoàn thành được cộng 1 huy hiệu. Hoàn thành đủ 5 chặng để chinh phục kho báu!</p></div>
+    </section>
+
+    <section id="san-pham" class="section-wrap section-block">
+      <h2 class="section-title green">🎁 Mua bộ sản phẩm</h2>
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <section id="chang" class="section-wrap section-block">
+      <h2 class="section-title purple">🗺️ Các chặng thử thách</h2>
+      <div id="stage-list" class="stage-grid"></div>
+      <div style="text-align:center;margin:24px 0"><button id="reset-progress" type="button" class="btn btn-outline">🔄 Chơi lại từ đầu</button></div>
+      <div id="finish-message" class="finish-message" hidden>🎉 Chúc mừng! Bạn đã chinh phục cả 5 chặng và tìm thấy kho báu!</div>
+    </section>
+
+    <section id="doi-thuong" class="section-wrap section-block">
+      <h2 class="section-title orange">🏆 Đổi huy hiệu nhận quà</h2>
+      <div id="reward-list" class="reward-grid"></div>
+      <h3 class="history-title">📜 Lịch sử đổi quà</h3><ul id="reward-history" class="history"></ul>
+    </section>
+  </main>
+
+  <aside id="cart-panel" class="cart-panel" hidden aria-label="Giỏ hàng">
+    <div class="cart-header"><h2>🛒 Giỏ hàng</h2><button id="cart-close" type="button" aria-label="Đóng giỏ hàng">✕</button></div>
+    <div id="cart-items"></div><p class="cart-total">Tổng cộng: <strong id="cart-total">0 đ</strong></p>
+    <button id="checkout" class="btn btn-blue" type="button">Ghi nhận đơn hàng</button>
+    <p class="cart-note">Không thu tiền và không gửi đơn hàng thật.</p>
+  </aside>
+
+  <dialog id="profile-dialog">
+    <form id="profile-form" class="profile-form">
+      <h2>Chỉnh sửa nhà thám hiểm</h2>
+      <label for="player-name">Tên hiển thị (không cần tên thật)</label><input id="player-name" maxlength="30" required placeholder="Ví dụ: Nhà thám hiểm Sao Vàng" />
+      <label for="player-grade">Khối lớp</label><select id="player-grade"><option>Lớp 1</option><option>Lớp 2</option><option>Lớp 3</option><option selected>Lớp 4</option><option>Lớp 5</option></select>
+      <div class="dialog-actions"><button id="cancel-profile" type="button" class="btn btn-outline">Hủy</button><button type="submit" class="btn btn-blue">Lưu</button></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <footer>🌈 Mật Mã Tri Thức · Học mà như chơi – Chinh phục kho báu</footer>
+</body>
+</html>
